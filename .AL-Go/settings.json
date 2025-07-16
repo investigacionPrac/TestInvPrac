@@ -6,5 +6,6 @@
   "bcptTestFolders": [],
   "configPackages": [
     "STANDARD"
-  ]
+  ],
+  "versioningStrategy": 3
 }
