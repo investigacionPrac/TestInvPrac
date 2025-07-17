@@ -128,7 +128,6 @@ codeunit 7268949 TCNTestCOMI
         InvoiceNo: Code[20];
         CommissionAmout: Decimal;
         ShouldHaveMsg: Label 'Should have Commission Amount Correct';
-        ErrorMessasgeRec: Record "Error Message";
     begin
         // [Feature] [Posting Invoice register Commission]
         // [Scenario 04] Posting Sales Invoice register Commission correctly
@@ -152,10 +151,6 @@ codeunit 7268949 TCNTestCOMI
 
         // [When] Sales Invoice is posted
         TestPostSalesInvoice(SalesHeader, InvoiceNo);
-        if ErrorMessasgeRec.FindSet() then
-            repeat
-                Message('Error: %1', ErrorMessasgeRec."Message Text");
-            until ErrorMessasgeRec.Next() = 0;
         // [Then] Salesperson should have Commission
         Assert.IsTrue(VerifySalespersonCommissionCorrect(Salesperson, InvoiceNo, CommissionAmout), ShouldHaveMsg);
     end;

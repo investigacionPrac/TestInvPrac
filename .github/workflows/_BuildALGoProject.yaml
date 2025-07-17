@@ -222,7 +222,14 @@ jobs:
           path: '${{ inputs.project }}/.buildartifacts/TestApps/'
           if-no-files-found: ignore
           retention-days: ${{ inputs.artifactsRetentionDays }}
-
+      
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: TestResults
+          path: TestResults.xml
+        
       - name: Publish artifacts - build output
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: (success() || failure()) && (hashFiles(format('{0}/BuildOutput.txt',inputs.project)) != '')
