@@ -54,7 +54,7 @@ codeunit 7268949 TCNTestCOMI
     begin
         // [Feature] [Posting Invoice register Commission]
         // [Scenario 02] Create Sales Invoice 
-        //Initialize(true, 0, '');
+        Initialize(true, 0, '');
 
         // [Given] Salesperson record with an empty Vendor No.
         GetFirstSalesperson(Salesperson, false);
@@ -93,7 +93,7 @@ codeunit 7268949 TCNTestCOMI
         // [Scenario 03] Posting Sales Invoice register Commission
         ShipCost := 2;
         ApplAccountNo := '6290001'; // OJO solo versión ES
-        //Initialize(true, ShipCost, ApplAccountNo);
+        Initialize(true, ShipCost, ApplAccountNo);
 
         // [Given] Salesperson record with an empty Vendor No.
         GetFirstSalesperson(Salesperson, false);
@@ -165,7 +165,7 @@ codeunit 7268949 TCNTestCOMI
         PurchasesPayablesSetup: Record "Purchases & Payables Setup";
     begin
         //LibraryTestInitialize.OnTestInitialize(CODEUNIT::TCNTestCOMI);
-
+        UseRequestPage := false;
         LibraryVariableStorage.Clear();
 
         /*
