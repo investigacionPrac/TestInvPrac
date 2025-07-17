@@ -76,7 +76,7 @@ codeunit 7268949 TCNTestCOMI
     end;
 
     [Test]
-    //[HandlerFunctions('ConfirmPostHandler')]
+    [HandlerFunctions('ConfirmPostHandler')]
     procedure PostSalesInvoice()
     var
         Salesperson: Record "Salesperson/Purchaser";
@@ -115,7 +115,7 @@ codeunit 7268949 TCNTestCOMI
     end;
 
     [Test]
-    //[HandlerFunctions('ConfirmPostHandler')]
+    [HandlerFunctions('ConfirmPostHandler')]
     procedure PostSalesInvoiceCalcCommission()
     var
         Salesperson: Record "Salesperson/Purchaser";
@@ -133,7 +133,7 @@ codeunit 7268949 TCNTestCOMI
         // [Scenario 04] Posting Sales Invoice register Commission correctly
         ShipCost := 2;
         ApplAccountNo := '6290001'; // OJO solo versión ES
-        //Initialize(true, ShipCost, ApplAccountNo);
+        Initialize(true, ShipCost, ApplAccountNo);
 
         // [Given] Salesperson record with an empty Vendor No.
         GetFirstSalesperson(Salesperson, false);
