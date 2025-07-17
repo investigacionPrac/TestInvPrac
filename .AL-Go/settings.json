@@ -11,8 +11,5 @@
   "configPackages": [
     "STANDARD"
   ],
-  "versioningStrategy": 3,
-  "testResultsFile": "testResults.xml",
-  "detailedTestResults": true,
-  "doNotRunTests": true
+  "versioningStrategy": 3
 }
