@@ -6,7 +6,6 @@ codeunit 7268949 TCNTestCOMI
 {
     Subtype = Test;
     TestPermissions = NonRestrictive;
-    UseRequestPage := false;
 
     var
         //LibraryRandom: Codeunit "Library - Random";
@@ -77,7 +76,7 @@ codeunit 7268949 TCNTestCOMI
     end;
 
     [Test]
-    [HandlerFunctions('ConfirmPostHandler')]
+    //[HandlerFunctions('ConfirmPostHandler')]
     procedure PostSalesInvoice()
     var
         Salesperson: Record "Salesperson/Purchaser";
@@ -116,7 +115,7 @@ codeunit 7268949 TCNTestCOMI
     end;
 
     [Test]
-    [HandlerFunctions('ConfirmPostHandler')]
+    //[HandlerFunctions('ConfirmPostHandler')]
     procedure PostSalesInvoiceCalcCommission()
     var
         Salesperson: Record "Salesperson/Purchaser";
