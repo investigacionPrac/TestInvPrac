@@ -13,5 +13,6 @@
   ],
   "versioningStrategy": 3,
   "testResultsFile": "testResults.xml",
-  "detailedTestResults": true
+  "detailedTestResults": true,
+  "runTests": false
 }

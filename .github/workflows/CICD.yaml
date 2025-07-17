@@ -195,6 +195,25 @@ jobs:
       secrets: 'licenseFileUrl,codeSignCertificateUrl,*codeSignCertificatePassword,keyVaultCertificateUrl,*keyVaultCertificatePassword,keyVaultClientId,gitHubPackagesContext,applicationInsightsConnectionString'
       signArtifacts: true
       useArtifactCache: true
+  TryTest:
+    needs: [ Initialization, Build ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Run AL-Go Test Pipeline
+        uses: microsoft/AL-Go-Actions/RunTests@v1
+        with:
+          artifactName: TestApp
+          testResultsFile: testresults.xml
+          detailedTestResults: true
+          
+      - name: Upload Test testResults
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestResults
+          path: testresults.xml
 
   DeployALDoc:
     needs: [ Initialization, Build ]
