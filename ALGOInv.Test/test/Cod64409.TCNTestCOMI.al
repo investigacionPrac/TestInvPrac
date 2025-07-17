@@ -268,7 +268,7 @@ codeunit 7268949 TCNTestCOMI
         SalesLine.validate("Type", SalesLine.Type::"G/L Account");
         SalesLine.Validate("No.", '7000001');
         SalesLine.Validate(Quantity, 1);
-        SalesLine.validate("Unit price", 1000)
+        SalesLine.validate("Unit price", 1000);
         SalesLine.Validate("Line Discount %", 3);
         SalesLine.Insert(true);
 
