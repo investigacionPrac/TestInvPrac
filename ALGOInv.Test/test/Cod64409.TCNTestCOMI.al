@@ -263,9 +263,12 @@ codeunit 7268949 TCNTestCOMI
         SalesLine.Validate("Document No.", SalesHeader."No.");
         SalesLine.Validate("Line No.", 10000);
         SalesLine.InitHeaderDefaults(SalesHeader);
-        SalesLine.Validate(Type, SalesLine.Type::Item);
-        SalesLine.Validate("No.", Item."No.");
+        // SalesLine.Validate(Type, SalesLine.Type::Item);
+        // SalesLine.Validate("No.", Item."No.");
+        SalesLine.validate("Type", SalesLine.Type::"G/L Account");
+        SalesLine.Validate("No.", '7000001');
         SalesLine.Validate(Quantity, 1);
+        SalesLine.validate("Unit price", 1000)
         SalesLine.Validate("Line Discount %", 3);
         SalesLine.Insert(true);
 
