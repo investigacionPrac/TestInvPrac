@@ -6,6 +6,7 @@ codeunit 7268949 TCNTestCOMI
 {
     Subtype = Test;
     TestPermissions = NonRestrictive;
+    UseRequestPage := false;
 
     var
         //LibraryRandom: Codeunit "Library - Random";
@@ -165,7 +166,6 @@ codeunit 7268949 TCNTestCOMI
         PurchasesPayablesSetup: Record "Purchases & Payables Setup";
     begin
         //LibraryTestInitialize.OnTestInitialize(CODEUNIT::TCNTestCOMI);
-        UseRequestPage := false;
         LibraryVariableStorage.Clear();
 
         /*
