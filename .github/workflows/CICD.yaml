@@ -204,7 +204,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Run AL-Go Test Pipeline
-        uses: microsoft/AL-Go-Actions/RunTests@v1
+        uses: microsoft/AL-Go-Actions/RunTestPipeline@v7.2
         with:
           artifactName: TestApp
           testResultsFile: testresults.xml
