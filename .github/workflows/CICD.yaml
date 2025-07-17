@@ -195,8 +195,10 @@ jobs:
       secrets: 'licenseFileUrl,codeSignCertificateUrl,*codeSignCertificatePassword,keyVaultCertificateUrl,*keyVaultCertificatePassword,keyVaultClientId,gitHubPackagesContext,applicationInsightsConnectionString'
       signArtifacts: true
       useArtifactCache: true
+  
   TryTest:
     needs: [ Initialization, Build ]
+    runs-on: [ windows-latest ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
