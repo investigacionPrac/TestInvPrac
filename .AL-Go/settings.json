@@ -12,8 +12,6 @@
     "STANDARD"
   ],
   "versioningStrategy": 3,
-  {
-    "testResultsFile": "testResults.xml",
-    "detailedTestResults": true
-  }
+  "testResultsFile": "testResults.xml",
+  "detailedTestResults": true
 }
