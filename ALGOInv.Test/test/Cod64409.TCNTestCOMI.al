@@ -292,7 +292,7 @@ codeunit 7268949 TCNTestCOMI
 
         SalesInvoice.OpenView();
         SalesInvoice.GoToRecord(SalesHeader);
-        //SalesInvoice.Post.Invoke();
+        SalesInvoice.Post.Invoke();
 
         SalesInvoiceHeader.SetRange("Pre-Assigned No.", SalesHeader."No.");
         if SalesInvoiceHeader.FindLast() then
